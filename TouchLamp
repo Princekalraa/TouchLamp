@@ -1,0 +1,16 @@
+const int touchSensorPin = 2;
+const int lampPin = 13;
+
+void setup() {
+  pinMode(touchSensorPin, INPUT);
+  pinMode(lampPin, OUTPUT);
+}
+
+void loop() {
+  int touchState = digitalRead(touchSensorPin);
+  
+  if (touchState == HIGH) {
+    digitalWrite(lampPin, !digitalRead(lampPin));
+    delay(200);
+  }
+}
